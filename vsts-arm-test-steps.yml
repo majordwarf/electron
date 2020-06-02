@@ -74,8 +74,10 @@ steps:
     cd src
     export ELECTRON_OUT_DIR=Default
     unset ELECTRON_DISABLE_SANDBOX
-    chmod 4755 out/Default/chrome-sandbox
-    sudo chown root out/Default/chrome-sandbox    
+    ls -la out/Default
+    sudo chown root out/Default/chrome-sandbox
+    sudo chmod 4755 out/Default/chrome-sandbox
+    ls -la out/Default
     (cd electron && node script/yarn test -- --enable-logging)
   displayName: 'Run Electron tests'
   timeoutInMinutes: 20
